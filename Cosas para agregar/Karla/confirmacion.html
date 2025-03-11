@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Formulario de Confirmación</title>
+<style>
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(35, 57, 91);
+    margin: 0%;
+    padding: 15px;
+}
+
+.marc2{
+    background-color: white;
+    padding: 25px;
+    border-radius: 6px;
+    width: 55%;
+    margin: 20px auto;
+}
+
+h4{
+    text-align:left;
+    margin-bottom: 20px;
+    color: rgb(35, 57, 91);
+}
+
+.hh2{
+    text-align:center;
+    margin-bottom: 20px;
+    color: rgb(35, 57, 91);
+}
+
+label{
+    display: block;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type= "date"],
+input[type= "number"] {
+    width: calc(100% - 26px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(35, 57, 91);
+    border-radius: 4px;
+    box-sizing: border-box;     
+}
+
+.bont2{
+    background-color: #517cf1;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.bont2:hover{background-color: rgb(49, 49, 223);
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="marc2">
+
+    <h3 class="hh2">Formulario de Registro de Confirmación<h3>
+    
+    <form>
+        <h4>Información de la persona que recibio el sagramento</h4>
+        <div>
+            <label for="Nombre">Nombre</label>
+            <input type="text" id="Nombre" name="nombre" required>
+        </div>
+
+        <div>
+            <label for="Apellido">Apellido</label>
+            <input type="text" id="Apellido" name="Apellido" required>
+        </div>
+
+        <div>
+            <label for="Fecha de nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="Fecha de nacimiento" name="Fecha de nacimiento" required>
+        </div>
+
+        <div>
+            <label for="Lugar de nacimiento">Lugar de nacimiento</label>
+            <input type="text" id="Lugar de nacimiento" name="Lugar de nacimiento" required>
+        </div>
+
+        <h4>Información familiar</h4>
+
+        <div>
+            <label for="padre">Padre</label>
+            <input type="text" id="padre" name="padre" required>
+        </div>
+
+        <div>
+            <label for="Madre">Madre</label>
+            <input type="text" id="Madre" name="Madre" required>
+        </div>
+
+        <div>
+            <label for="padrino">Padrino</label>
+            <input type="text" id="padrino" name="padrino" required>
+        </div>
+
+        <h4>Información del Sacramento</h4>
+
+        <div>
+            <label for="ministro">Ministro</label>
+            <input type="text" id="ministro" name="ministro" required>
+        </div>
+
+        <div>
+            <label for="fecha de confirmación">Fecha de confirmación</label>
+            <input type="date" id="fecha de la confirmación" name="fecha de confirmación" required>
+        </div>
+
+        <div>
+            <label for="Lugar de confirmación">Lugar de confirmación</label>
+            <input type="text" id="Lugar del bautizo" name="Lugar de bautizo" required>
+        </div>
+
+        <h4>Registro eclesiástico</h4>
+
+        <div>
+            <label for= "acta n°">Acta N°</label>
+            <input type="number" id="acta n°" name="acta n°" required>
+        </div>
+
+        <div>
+            <label for= "folio n°">Folio N°</label>
+            <input type="number" id="folio n°" name="folio n°" required>
+        </div>
+
+        <div>
+            <label for= "libro n°">libro N°</label>
+            <input type="number" id="libro n° " name="libro n°" required>
+        </div>
+
+        <div>
+            <button type="submit" class="bont2">Registrar bautizo</button>
+        </div>
+
+</body>
+

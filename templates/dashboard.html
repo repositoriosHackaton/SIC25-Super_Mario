@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecrumIA</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Librería Marked para convertir Markdown a HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar izquierdo -->
+    <div id="chatSidebar" class="sidebar">
+      <button onclick="window.location.href='{{ url_for('logout') }}'">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+      </button>
+      <button onclick="alert('Funcionalidad de Tu Cuenta próximamente')">
+        <i class="fas fa-user"></i> Tu Cuenta
+      </button>
+      <!-- Botón para solicitar documento -->
+      <button onclick="openDocumentModal()">
+        <i class="fas fa-file-alt"></i> Solicitar un documento
+      </button>
+    </div>
+    <!-- Botón de toggle para el sidebar -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <!-- Área de chat (columna derecha) -->
+    <div class="chat-area">
+      <div class="dashboard-chat">
+        <div class="dashboard-chat-header">SecrumIA 1.0</div>
+        <div class="dashboard-chat-body" id="dashboardMessages">
+          {% set ns = namespace(last_date="") %}
+          {% for msg in history %}
+            {% set current_date = msg.timestamp.split(" ")[0] %}
+            {% if ns.last_date != current_date %}
+              <div class="date-divider">
+                {{ current_date | format_date_divider }}
+              </div>
+              {% set ns.last_date = current_date %}
+            {% endif %}
+            <div class="dashboard-message-wrapper {% if msg.sender == 'user' %}user-message{% else %}bot-message{% endif %}" data-msg-id="{{ msg.id }}">
+              <div class="dashboard-message-content {% if msg.sender == 'bot' %}markdown{% endif %}">
+                {% if msg.sender == 'bot' %}
+                  {{ msg.message | safe }}
+                {% else %}
+                  {{ msg.message }}
+                {% endif %}
+              </div>
+              <div class="dashboard-message-timestamp">{{ msg.timestamp | format_time }}</div>
+              <div class="dashboard-message-actions">
+                <button onclick="copyMessage(this)" title="Copiar"><i class="fas fa-copy"></i></button>
+                <button onclick="deleteMessage(this)" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="dashboard-chat-input">
+          <input type="text" id="dashboardInput" placeholder="Escribe tu mensaje...">
+          <button onclick="sendDashboardMessage()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para solicitar documento -->
+  <div id="documentModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDocumentModal()">&times;</span>
+      <div class="modal-header">Solicitar Documento</div>
+      <label for="docType">Tipo de documento:</label>
+      <select id="docType">
+        <option value="bautismo">Acta de Bautizo</option>
+        <option value="confirmacion">Acta de Confirmación</option>
+        <option value="matrimonio">Acta de Matrimonio</option>
+        <option value="defuncion">Acta de Defunción</option>
+      </select>
+      <label for="cedula">Número de cédula:</label>
+      <input type="text" id="cedula" placeholder="Ingresa tu cédula">
+      <button onclick="solicitarDocumento()">Solicitar</button>
+    </div>
+  </div>
+
+  <!-- Se incluye el archivo de JavaScript de forma externa -->
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario de Registro de Bautizo</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: rgb(35, 57, 91);
+        margin: 0;
+        padding: 15px;
+      }
+      .marco {
+        background-color: white;
+        padding: 25px;
+        border-radius: 6px;
+        width: 55%;
+        margin: 20px auto;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(35, 57, 91);
+      }
+      label {
+        display: block;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      input[type="text"],
+      input[type="date"],
+      input[type="number"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid rgb(35, 57, 91);
+        border-radius: 4px;
+        box-shadow: 3px 3px 3px rgba(25, 71, 221, 0.84);
+        box-sizing: border-box;
+      }
+      .bont {
+        background-color: rgba(25, 71, 221, 0.84);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      .bont:hover {
+        background-color: rgb(49, 49, 223);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marco">
+      <h2>Formulario de Registro de Bautizo</h2>
+      <form action="/submit_bautizo" method="POST">
+        <h3>Información del Bautizado(a)</h3>
+        <div>
+          <label for="Nombre">Nombre</label>
+          <input type="text" id="Nombre" name="nombre" required />
+        </div>
+        <div>
+          <label for="Apellido">Apellido</label>
+          <input type="text" id="Apellido" name="Apellido" required />
+        </div>
+        <div>
+          <label for="cedula_de_identidad">Cédula de identidad</label>
+          <input
+            type="number"
+            id="cedula_de_identidad"
+            name="cédula_de_identidad"
+          />
+        </div>
+        <div>
+          <label for="Fecha_de_nacimiento">Fecha de nacimiento</label>
+          <input
+            type="date"
+            id="Fecha_de_nacimiento"
+            name="Fecha_de_nacimiento"
+            required
+          />
+        </div>
+        <div>
+          <label for="Lugar_de_nacimiento">Lugar de nacimiento</label>
+          <input
+            type="text"
+            id="Lugar_de_nacimiento"
+            name="Lugar_de_nacimiento"
+            required
+          />
+        </div>
+        <h3>Información Familiar</h3>
+        <div>
+          <label for="padre">Padre</label>
+          <input type="text" id="padre" name="padre" required />
+        </div>
+        <div>
+          <label for="Madre">Madre</label>
+          <input type="text" id="Madre" name="Madre" required />
+        </div>
+        <div>
+          <label for="padrino">Padrino</label>
+          <input type="text" id="padrino" name="padrino" required />
+        </div>
+        <div>
+          <label for="madrina">Madrina</label>
+          <input type="text" id="madrina" name="madrina" required />
+        </div>
+        <h3>Información del Sacramento</h3>
+        <div>
+          <label for="ministro">Ministro</label>
+          <input type="text" id="ministro" name="ministro" required />
+        </div>
+        <div>
+          <label for="fecha_de_bautizo">Fecha de bautizo</label>
+          <input
+            type="date"
+            id="fecha_de_bautizo"
+            name="fecha_de_bautizo"
+            required
+          />
+        </div>
+        <div>
+          <label for="Lugar_del_bautizo">Lugar de bautizo</label>
+          <input
+            type="text"
+            id="Lugar_del_bautizo"
+            name="Lugar_del_bautizo"
+            required
+          />
+        </div>
+        <div>
+          <label for="testigos">Testigos</label>
+          <input type="text" id="testigos" name="testigos" />
+        </div>
+        <h3>Registro Civil</h3>
+        <div>
+          <label for="acta_n°">Acta N°</label>
+          <input type="number" id="acta_n°" name="acta_n°" required />
+        </div>
+        <div>
+          <label for="folio_n°">Folio N°</label>
+          <input type="number" id="folio_n°" name="folio_n°" required />
+        </div>
+        <div>
+          <label for="tomo_n°">Tomo N°</label>
+          <input type="number" id="tomo_n°" name="tomo_n°" required />
+        </div>
+        <div>
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha" required />
+        </div>
+        <div>
+          <button type="submit" class="bont">Registrar bautizo</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

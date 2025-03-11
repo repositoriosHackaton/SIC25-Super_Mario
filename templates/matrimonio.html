@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario de Registro de Matrimonio</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: rgb(35, 57, 91);
+        margin: 0;
+        padding: 15px;
+      }
+      .marc3 {
+        background-color: white;
+        padding: 25px;
+        border-radius: 6px;
+        width: 55%;
+        margin: 20px auto;
+      }
+      h3 {
+        text-align: left;
+        margin-bottom: 20px;
+        color: rgb(35, 57, 91);
+      }
+      .hh3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(35, 57, 91);
+      }
+      label {
+        display: block;
+        text-align: justify;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      input[type="text"],
+      input[type="date"],
+      input[type="number"] {
+        width: calc(100% - 26px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid rgb(35, 57, 91);
+        border-radius: 4px;
+        box-shadow: 3px 3px 3px rgba(25, 71, 221, 0.84);
+        box-sizing: border-box;
+      }
+      .bont3 {
+        background-color: rgba(25, 71, 221, 0.84);
+        color: white;
+        padding: 12px 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      .bont3:hover {
+        background-color: rgb(49, 49, 223);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marc3">
+      <h3 class="hh3">Formulario de Registro de Matrimonio</h3>
+      <form action="/submit_matrimonio" method="POST">
+        <h4>Información del Novio</h4>
+        <div>
+          <label for="nombre_novio">Nombre</label>
+          <input type="text" id="nombre_novio" name="nombre_novio" required />
+        </div>
+        <div>
+          <label for="cedula_novio">Cédula de identidad</label>
+          <input type="number" id="cedula_novio" name="cedula_novio" required />
+        </div>
+        <div>
+          <label for="Fecha_de_nacimiento_novio">Fecha de nacimiento</label>
+          <input
+            type="date"
+            id="Fecha_de_nacimiento_novio"
+            name="Fecha_de_nacimiento_novio"
+            required
+          />
+        </div>
+        <div>
+          <label for="Lugar_de_nacimiento_novio">Lugar de nacimiento</label>
+          <input
+            type="text"
+            id="Lugar_de_nacimiento_novio"
+            name="Lugar_de_nacimiento_novio"
+            required
+          />
+        </div>
+        <div>
+          <label for="padre_novio">Padre</label>
+          <input type="text" id="padre_novio" name="padre_novio" required />
+        </div>
+        <div>
+          <label for="Madre_novio">Madre</label>
+          <input type="text" id="Madre_novio" name="Madre_novio" required />
+        </div>
+        <h4>Información de la Novia</h4>
+        <div>
+          <label for="nombre_novia">Nombre</label>
+          <input type="text" id="nombre_novia" name="nombre_novia" required />
+        </div>
+        <div>
+          <label for="cedula_novia">Cédula de identidad</label>
+          <input type="number" id="cedula_novia" name="cedula_novia" required />
+        </div>
+        <div>
+          <label for="Fecha_de_nacimiento_novia">Fecha de nacimiento</label>
+          <input
+            type="date"
+            id="Fecha_de_nacimiento_novia"
+            name="Fecha_de_nacimiento_novia"
+            required
+          />
+        </div>
+        <div>
+          <label for="Lugar_de_nacimiento_novia">Lugar de nacimiento</label>
+          <input
+            type="text"
+            id="Lugar_de_nacimiento_novia"
+            name="Lugar_de_nacimiento_novia"
+            required
+          />
+        </div>
+        <div>
+          <label for="padre_novia">Padre</label>
+          <input type="text" id="padre_novia" name="padre_novia" required />
+        </div>
+        <div>
+          <label for="Madre_novia">Madre</label>
+          <input type="text" id="Madre_novia" name="Madre_novia" required />
+        </div>
+        <h4>Información del Sacramento</h4>
+        <div>
+          <label for="ministro">Ministro</label>
+          <input type="text" id="ministro" name="ministro" required />
+        </div>
+        <div>
+          <label for="fecha_de_matrimonio">Fecha del Matrimonio</label>
+          <input
+            type="date"
+            id="fecha_de_matrimonio"
+            name="fecha_de_matrimonio"
+            required
+          />
+        </div>
+        <div>
+          <label for="Lugar_del_matrimonio">Lugar del Matrimonio</label>
+          <input
+            type="text"
+            id="Lugar_del_matrimonio"
+            name="Lugar_del_matrimonio"
+            required
+          />
+        </div>
+        <div>
+          <label for="testigos">Testigos</label>
+          <input type="text" id="testigos" name="testigos" />
+        </div>
+        <h4>Registro eclesiástico</h4>
+        <div>
+          <label for="acta_n°">Acta N°</label>
+          <input type="number" id="acta_n°" name="acta_n°" required />
+        </div>
+        <div>
+          <label for="folio_n°">Folio N°</label>
+          <input type="number" id="folio_n°" name="folio_n°" required />
+        </div>
+        <div>
+          <label for="libro_n°">Libro N°</label>
+          <input type="number" id="libro_n°" name="libro_n°" required />
+        </div>
+        <div>
+          <button type="submit" class="bont3">Registrar Matrimonio</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

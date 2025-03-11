@@ -1,0 +1,382 @@
+{
+  "informacion": [
+    {
+      "Preguntas": [
+        "¿Dónde esta la Iglesia San Martín de Porres?",
+        "¿Cuál es la dirección exacta de la iglesia?",
+        "¿En qué barrio o zona se sitúa la iglesia?",
+        "¿La iglesia cuenta con estacionamiento y accesos para personas con movilidad reducida?",
+        "¿La iglesia ofrece tours o visitas guiadas?"
+      ],
+      "Respuesta": [
+        "La Iglesia San Martín de Porres está situada en el corazón de La Guaira, en la Calle Real de Montesano.",
+        "La dirección exacta es Calle Real de Montesano, entre el Callejón Victoria y la Avenida Carlos Soublette.",
+        "Se encuentra en el histórico barrio de La Guaira, reconocido por su arquitectura colonial y ambiente tradicional.",
+        "Sí, dispone de un estacionamiento con capacidad para 60 vehículos y acceso adaptado para personas con discapacidad.",
+        "Sí, ofrecemos visitas guiadas los fines de semana para conocer la historia y la arquitectura de la iglesia."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cómo puedo contactar a la Iglesia San Martín de Porres?",
+        "¿Cuál es el número de teléfono de la parroquia?",
+        "¿Tienen un correo electrónico para consultas?",
+        "¿La iglesia está activa en redes sociales?",
+        "¿Dónde puedo encontrar más información en línea sobre la iglesia?"
+      ],
+      "Respuesta": [
+        "Puedes comunicarte con la iglesia llamando a la línea principal o visitando la oficina parroquial.",
+        "El número de contacto es 0212-555-7890.",
+        "El correo electrónico oficial es info@sanmartinporres.org.",
+        "Sí, contamos con perfiles en Facebook, Instagram y Twitter para mantener informada a la comunidad.",
+        "Toda la información actualizada se encuentra en nuestro sitio web oficial: www.sanmartinporres.org."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cuáles son los horarios de confesión?",
+        "¿Cómo puedo solicitar un bautizo o confirmación?",
+        "¿Qué requisitos hay para contraer matrimonio en la iglesia?",
+        "¿Ofrecen el servicio de unción de enfermos?",
+        "¿Cuál es el proceso para agendar un sacramento?"
+      ],
+      "Respuesta": [
+        "Las confesiones se realizan los jueves de 4:00 pm a 6:00 pm y antes de cada misa dominical.",
+        "Para solicitar un bautizo o confirmación, debes agendar una cita en la oficina parroquial con al menos 15 días de anticipación y presentar la documentación requerida.",
+        "Para contraer matrimonio se requiere asistir a un curso prematrimonial y presentar copias certificadas de partidas de bautismo y confirmación, junto con la cédula de identidad.",
+        "Sí, la unción de enfermos está disponible las 24 horas; en caso de emergencia, comunícate al 0416-555-8901.",
+        "Puedes agendar cualquier sacramento contactando la oficina parroquial o a través de nuestro sistema de citas en línea."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Qué actividades ofrece la iglesia para jóvenes?",
+        "¿Existen grupos de catequesis para niños?",
+        "¿Organizan retiros espirituales para adolescentes?",
+        "¿Cómo puedo inscribir a mi hijo en las actividades de la parroquia?",
+        "¿Se realizan actividades deportivas o recreativas para la comunidad?"
+      ],
+      "Respuesta": [
+        "Los jóvenes pueden participar en el grupo 'Juventud en Fe', que se reúne los viernes a las 5:00 pm para dinámicas, charlas y actividades recreativas.",
+        "Sí, la catequesis para niños se lleva a cabo los sábados de 9:00 am a 11:00 am, adaptada a distintas edades.",
+        "Organizamos retiros espirituales trimestrales para adolescentes, con inscripción abierta un mes antes del evento.",
+        "Para inscribir a tu hijo, visita la oficina parroquial o regístrate a través de nuestro sitio web.",
+        "Además, colaboramos con organizaciones locales para ofrecer actividades deportivas y recreativas."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cómo puedo hacer una donación a la iglesia?",
+        "¿Aceptan voluntarios para actividades comunitarias?",
+        "¿Cuál es la cuenta bancaria para realizar aportes?",
+        "¿Puedo donar alimentos o ropa?",
+        "¿Existen campañas de recaudación de fondos durante el año?"
+      ],
+      "Respuesta": [
+        "Puedes hacer donaciones en efectivo en la oficina parroquial o mediante transferencia bancaria.",
+        "Sí, siempre estamos en busca de voluntarios para programas sociales, eventos y labores de mantenimiento; infórmate en la oficina.",
+        "Nuestra cuenta es en el Banco de Venezuela, cuenta corriente 0102-0555-5555-55555555, a nombre de la Parroquia San Martín de Porres.",
+        "Aceptamos donaciones de alimentos y ropa, que se reciben los lunes y miércoles de 8:00 am a 1:00 pm.",
+        "Regularmente lanzamos campañas de recaudación para apoyar proyectos de restauración y programas comunitarios."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cuál es la historia de la Iglesia San Martín de Porres?",
+        "¿Cuándo fue fundada la iglesia?",
+        "¿Qué importancia histórica tiene la parroquia?",
+        "¿Ha sido declarada patrimonio cultural?",
+        "¿Qué hitos destacan en la trayectoria de la iglesia?"
+      ],
+      "Respuesta": [
+        "La iglesia fue fundada en 1960 por la comunidad local, consolidándose como un centro espiritual de la región.",
+        "La fundación data de 1960, cuando los vecinos se unieron para crear un espacio de encuentro y fe.",
+        "Es reconocida por su arquitectura colonial y su papel en el desarrollo cultural y social de La Guaira.",
+        "Sí, fue declarada patrimonio cultural en 2005, por su valor histórico y artístico.",
+        "Entre los hitos se destacan la restauración en 1998 y la inauguración del nuevo ala comunitaria en 2015."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cuáles son los horarios de las misas dominicales?",
+        "¿Se celebran misas durante la semana?",
+        "¿Cómo se adaptan los horarios en días festivos?",
+        "¿Se ofrecen misas en otros idiomas?",
+        "¿Existen servicios especiales en fechas religiosas importantes?"
+      ],
+      "Respuesta": [
+        "Las misas dominicales se celebran a las 8:00 am y a las 10:30 am.",
+        "Además, se realizan misas feriales de lunes a viernes, con horarios que varían según el calendario litúrgico.",
+        "En días festivos, los horarios se ajustan según el calendario especial; se recomienda consultar en la oficina parroquial.",
+        "Ofrecemos una misa en inglés cada primer domingo del mes en la capilla lateral y ocasionalmente en francés.",
+        "En fechas importantes como Semana Santa y Navidad, se programan servicios y vigilias especiales con un ambiente solemne."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cuándo se celebra la fiesta patronal de la iglesia?",
+        "¿Qué celebraciones especiales se realizan a lo largo del año?",
+        "¿Organizan procesiones en fechas señaladas?",
+        "¿Hay eventos culturales y talleres durante las festividades?",
+        "¿Qué actividades se programan para la fiesta patronal?"
+      ],
+      "Respuesta": [
+        "La fiesta patronal se celebra el 3 de noviembre, con procesión, feria y actividades para toda la comunidad.",
+        "Durante el año se conmemoran la Semana Santa, Navidad y otras festividades religiosas con eventos especiales.",
+        "Sí, organizamos procesiones y desfiles en fechas clave, integrando a la comunidad en las celebraciones.",
+        "Durante las festividades se imparten talleres, conciertos de música sacra y exposiciones de arte religioso.",
+        "La fiesta patronal incluye actividades lúdicas, concursos, ferias gastronómicas y muestras culturales."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿La iglesia es accesible para personas con discapacidad?",
+        "¿Cuenta con rampas y baños adaptados?",
+        "¿Qué facilidades ofrece para personas mayores?",
+        "¿Dispone de elevadores o servicios adicionales de accesibilidad?",
+        "¿Hay asientos reservados para personas con movilidad reducida?"
+      ],
+      "Respuesta": [
+        "Sí, la iglesia ha sido adaptada para asegurar el acceso a personas con movilidad reducida.",
+        "Contamos con rampas de acceso, baños adaptados y señalización clara en todas las áreas.",
+        "Ofrecemos asientos reservados y asistencia personalizada para personas mayores durante los servicios.",
+        "Aunque no contamos con elevadores, hemos implementado soluciones de accesibilidad en todas las zonas públicas.",
+        "Los asientos preferenciales están ubicados en la primera fila para mayor comodidad de quienes lo requieran."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Dónde se encuentra la oficina parroquial?",
+        "¿Cuáles son los horarios de atención de la administración?",
+        "¿Cómo puedo contactar a la administración de la iglesia?",
+        "¿Qué servicios administrativos ofrecen?",
+        "¿Se puede agendar una cita para trámites o consultas?"
+      ],
+      "Respuesta": [
+        "La oficina parroquial está ubicada en el mismo edificio de la iglesia, en la entrada principal.",
+        "Atendemos de lunes a viernes de 8:00 am a 1:00 pm y de 3:00 pm a 6:00 pm.",
+        "Puedes contactarnos al 0212-555-7890 o enviar un correo a administracion@sanmartinporres.org.",
+        "Ofrecemos servicios de inscripción, registro de sacramentos, información general y apoyo pastoral.",
+        "Sí, es posible agendar citas para trámites y consultas a través de nuestro portal en línea o llamando a la oficina."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cómo puedo obtener información sobre el coro parroquial?",
+        "¿Cuándo y dónde ensaya el coro?",
+        "¿Quién dirige el coro de la iglesia?",
+        "¿Se ofrecen clases de música sacra?",
+        "¿Puedo participar en el coro aunque no tenga experiencia musical?"
+      ],
+      "Respuesta": [
+        "El coro parroquial participa activamente en las celebraciones litúrgicas y es un orgullo de la comunidad.",
+        "Ensayamos los miércoles a las 5:30 pm en el salón de actividades de la iglesia.",
+        "El coro está dirigido por el Maestro Luis Rodríguez, reconocido por su trayectoria en música sacra.",
+        "Ofrecemos talleres y clases de música sacra los martes por la tarde para interesados.",
+        "Sí, el coro da la bienvenida a nuevos miembros, ofreciendo clases de iniciación sin requerir experiencia previa."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Se realizan estudios bíblicos en la iglesia?",
+        "¿Cuándo se llevan a cabo las reuniones de estudio bíblico?",
+        "¿Quién imparte la catequesis para adolescentes?",
+        "¿Ofrecen talleres o charlas formativas sobre teología?",
+        "¿Puedo participar en los estudios bíblicos si no soy feligrés?"
+      ],
+      "Respuesta": [
+        "Sí, organizamos estudios bíblicos semanales para profundizar en las enseñanzas de la fe.",
+        "La reunión se realiza cada martes a las 7:00 pm en el salón de actividades.",
+        "La catequesis para adolescentes es impartida por el Pbro. Andrés Martínez, con amplia experiencia pastoral.",
+        "Aunque no ofrecemos clases formales de teología, realizamos talleres y charlas formativas periódicas.",
+        "Claro, los estudios bíblicos están abiertos a todos los interesados, sin necesidad de ser miembro oficial."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿La iglesia cuenta con grupos de oración?",
+        "¿Cuándo se reúnen para orar en comunidad?",
+        "¿Ofrecen consejería o apoyo espiritual?",
+        "¿Cómo puedo solicitar una cita de asesoría espiritual?",
+        "¿Hay grupos de apoyo para familias en crisis?"
+      ],
+      "Respuesta": [
+        "Sí, tenemos varios grupos de oración que se reúnen semanalmente para compartir su fe.",
+        "Las reuniones de oración se llevan a cabo los jueves a las 7:00 pm en el salón de reuniones.",
+        "Ofrecemos consejería espiritual a través de nuestro equipo pastoral para brindar apoyo en momentos difíciles.",
+        "Para solicitar una cita, comunícate a la oficina parroquial o regístrate en nuestro portal web.",
+        "También contamos con grupos de apoyo y asesoría para familias en situaciones de crisis."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cómo puedo contactar a la iglesia en caso de emergencia?",
+        "¿Existe un número de urgencias para atención pastoral?",
+        "¿Se brinda asistencia en crisis espirituales fuera del horario habitual?",
+        "¿Qué debo hacer en una situación de crisis?",
+        "¿Cómo puedo reportar una emergencia dentro de la comunidad?"
+      ],
+      "Respuesta": [
+        "En caso de emergencia, llama inmediatamente al 0416-555-8901.",
+        "Contamos con un número de urgencias exclusivo para atención pastoral inmediata.",
+        "Sí, nuestro servicio de atención pastoral está disponible las 24 horas, los 7 días de la semana.",
+        "En situaciones de crisis, acude a la oficina parroquial o contacta a nuestro equipo de urgencias para recibir ayuda inmediata.",
+        "Puedes reportar emergencias llamando al número de urgencias o visitando nuestra oficina en cualquier momento."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Qué programas comunitarios ofrece la iglesia?",
+        "¿Hay iniciativas de caridad o ayuda social?",
+        "¿Cómo puedo participar en actividades comunitarias?",
+        "¿Se organizan eventos culturales para la comunidad?",
+        "¿Existen programas de integración para migrantes o refugiados?"
+      ],
+      "Respuesta": [
+        "La iglesia impulsa diversos programas comunitarios, como apoyo a familias vulnerables y actividades de integración social.",
+        "Sí, organizamos iniciativas de caridad mensuales y colaboramos con Cáritas para asistir a los necesitados.",
+        "Puedes participar inscribiéndote en la oficina parroquial o a través de nuestras redes sociales.",
+        "Regularmente organizamos eventos culturales, ferias y talleres para fortalecer la cohesión comunitaria.",
+        "También contamos con programas especiales de integración para migrantes y refugiados en colaboración con organizaciones locales."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿La iglesia cuenta con una biblioteca parroquial?",
+        "¿Qué tipo de material se puede encontrar en ella?",
+        "¿Dispone de recursos para el estudio religioso?",
+        "¿Cuál es el horario de atención de la biblioteca?",
+        "¿Se organizan clubes de lectura o charlas literarias en la biblioteca?"
+      ],
+      "Respuesta": [
+        "Sí, la iglesia dispone de una biblioteca parroquial bien equipada para toda la comunidad.",
+        "Encontrarás libros, revistas, material audiovisual y recursos digitales sobre fe, historia y cultura local.",
+        "La biblioteca ofrece material para el estudio religioso y para investigaciones sobre la historia de la iglesia.",
+        "El horario de atención es de lunes a viernes de 9:00 am a 5:00 pm, y los sábados de 10:00 am a 2:00 pm.",
+        "Sí, organizamos clubes de lectura y charlas literarias mensuales sobre temas de espiritualidad y cultura."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿La iglesia organiza actividades para adultos mayores?",
+        "¿Qué programas hay para la tercera edad?",
+        "¿Se ofrecen servicios de acompañamiento para ancianos?",
+        "¿Existen reuniones o eventos especiales para adultos mayores?",
+        "¿La iglesia cuenta con espacios de recreación para adultos mayores?"
+      ],
+      "Respuesta": [
+        "Sí, contamos con actividades y reuniones especialmente diseñadas para adultos mayores.",
+        "Ofrecemos talleres, charlas y grupos de apoyo dirigidos a la tercera edad.",
+        "Contamos con un servicio de acompañamiento para ancianos durante los servicios religiosos.",
+        "Organizamos encuentros y actividades sociales periódicas para fomentar la integración y el bienestar.",
+        "Además, disponemos de un área de recreación y socialización exclusiva para adultos mayores."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿La iglesia celebra misas en idiomas extranjeros?",
+        "¿Cuáles son los horarios de las misas en inglés o francés?",
+        "¿Existe un grupo de fieles internacionales?",
+        "¿Cómo puedo participar en la misa multicultural?",
+        "¿Se transmiten las misas en vivo por internet?"
+      ],
+      "Respuesta": [
+        "Sí, además de las misas en español, celebramos misas en inglés y francés.",
+        "La misa en inglés se celebra el primer domingo del mes a las 11:00 am, y la misa en francés el tercer domingo a las 10:00 am.",
+        "Contamos con una comunidad internacional activa que se reúne regularmente para compartir su fe.",
+        "Para participar, contacta a la oficina parroquial o regístrate a través de nuestro sitio web.",
+        "Sí, ofrecemos transmisión en vivo de las misas a través de nuestra página web y redes sociales."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿La iglesia organiza eventos de recaudación de fondos?",
+        "¿Cuándo se realizará el próximo evento benéfico?",
+        "¿Cómo puedo colaborar con donaciones no monetarias?",
+        "¿Se hacen subastas o colectas especiales?",
+        "¿Existen actividades solidarias para recaudar fondos para obras de caridad?"
+      ],
+      "Respuesta": [
+        "Sí, organizamos eventos de recaudación de fondos anuales para financiar proyectos comunitarios.",
+        "El próximo evento benéfico está programado para diciembre, con actividades para toda la familia.",
+        "Puedes colaborar donando ropa, alimentos o juguetes; consulta los detalles en la oficina parroquial.",
+        "Ocasionalmente realizamos subastas y colectas especiales para apoyar causas sociales.",
+        "También organizamos caminatas solidarias y ferias benéficas para recaudar fondos para obras de caridad."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cómo llegar a la iglesia en transporte público?",
+        "¿Qué rutas de autobús tienen parada cerca de la iglesia?",
+        "¿Hay señalización para visitantes que no conocen la zona?",
+        "¿Existe un centro de información turística en las cercanías?",
+        "¿Se ofrece servicio de transporte desde puntos estratégicos de la ciudad?"
+      ],
+      "Respuesta": [
+        "La iglesia es fácilmente accesible mediante diversas líneas de autobús y taxis colectivos.",
+        "Las líneas 42, 75 y 88 cuentan con paradas cercanas a la Iglesia San Martín de Porres.",
+        "Hay señalización clara y mapas informativos en la entrada principal para orientar a los visitantes.",
+        "El centro de información turística se ubica a dos cuadras de la iglesia, facilitando la orientación a los visitantes.",
+        "En ocasiones especiales, se ofrece un servicio de transporte desde puntos estratégicos durante eventos importantes."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Quién es el padre o párroco de la Iglesia San Martín de Porres?",
+        "¿Cuál es el nombre del sacerdote que dirige la parroquia?",
+        "¿Cuánto tiempo lleva en el cargo el Pbro. Alejandro Jiménez?",
+        "¿Puedo solicitar una audiencia con el padre?",
+        "¿El padre realiza homilías o charlas regulares?"
+      ],
+      "Respuesta": [
+        "El párroco actual es el Pbro. Alejandro Jiménez, quien ha dirigido la iglesia con dedicación y compromiso.",
+        "Pbro. Alejandro Jiménez es el nombre del sacerdote encargado de la parroquia.",
+        "Lleva en el cargo más de 12 años, siendo una figura muy respetada en la comunidad.",
+        "Sí, puedes solicitar una audiencia a través de la oficina parroquial para conversar personalmente con él.",
+        "El padre Alejandro Jiménez realiza homilías y charlas regulares durante las misas y en reuniones especiales."
+      ]
+    },
+    {
+      "Preguntas": [
+        "¿Cuáles son los requisitos para el bautizo?",
+        "¿Qué documentos necesito para solicitar el bautizo de mi hijo?",
+        "¿Cómo agendo la ceremonia del bautizo?",
+        "¿Cuánto tiempo antes debo solicitar el bautizo?",
+        "¿Cuál es la donación sugerida para un bautizo?",
+        "¿Cómo se realiza el trámite de confirmación?",
+        "¿Qué documentos se requieren para la confirmación?",
+        "¿Cuándo se puede programar la confirmación?",
+        "¿Cuáles son los pasos para inscribir un matrimonio en la iglesia?",
+        "¿Qué documentos son necesarios para contraer matrimonio en la parroquia?",
+        "¿Se requiere curso prematrimonial para el matrimonio?",
+        "¿Cuál es el procedimiento para solicitar la primera comunión?",
+        "¿Qué requisitos debo cumplir para la primera comunión?",
+        "¿Cómo puedo inscribirme en un curso de preparación sacramental?",
+        "¿Qué trámites se deben realizar para la unción de enfermos?",
+        "¿Puedo solicitar una audiencia con el párroco para orientación sobre mis trámites sacramentales?",
+        "¿Cómo se realiza la inscripción en el registro parroquial?",
+        "¿Qué debo hacer para actualizar los datos de mi familia en el registro parroquial?"
+      ],
+      "Respuesta": [
+        "Para el bautizo, se requiere presentar el acta de nacimiento del niño, identificación de los padres y asistir a una clase preparatoria.",
+        "Necesitas el acta de nacimiento del niño, cédulas de identidad de los padres y, en algunos casos, una carta de recomendación de la parroquia.",
+        "La ceremonia se agenda llamando a la oficina parroquial o a través de nuestro portal en línea.",
+        "Se recomienda solicitar el bautizo al menos con un mes de antelación para coordinar todos los detalles.",
+        "El bautizo no tiene un costo fijo, pero se sugiere una donación voluntaria que ayuda a cubrir los gastos de la ceremonia.",
+        "Para la confirmación, es necesario asistir a un curso de preparación y presentar tu acta de bautizo junto con tu identificación.",
+        "Se requiere tu acta de bautizo, una identificación oficial y, en algunos casos, una carta de recomendación del catequista.",
+        "La confirmación se puede programar una vez finalizado el curso preparatorio, generalmente se realizan ceremonias mensuales.",
+        "Para inscribir un matrimonio, debes presentar actas de nacimiento de ambos contrayentes, cédulas de identidad, y en ocasiones actas de bautizo y confirmación.",
+        "Necesitas actas de nacimiento, identificación oficial, certificados de bautizo y confirmación, y, en algunos casos, constancias de soltería.",
+        "Sí, es obligatorio asistir a un curso prematrimonial que prepara a la pareja para la vida en común y el sacramento del matrimonio.",
+        "Para la primera comunión, debes inscribirte en el curso de preparación, asistir a las clases y presentar tu acta de bautizo.",
+        "Requieres haber recibido el bautizo, asistir al curso de preparación y demostrar una adecuada preparación espiritual.",
+        "Puedes inscribirte en el curso de preparación sacramental en la oficina parroquial o a través de nuestro sitio web.",
+        "Para la unción de enfermos, es necesario solicitar una cita de emergencia en la oficina parroquial y presentar un informe médico.",
+        "Sí, puedes solicitar una audiencia con el párroco para orientación sobre tus trámites llamando al 0212-555-7890.",
+        "La inscripción en el registro parroquial se realiza presentando actas de nacimiento y cédulas de identidad en la oficina.",
+        "Para actualizar los datos familiares, visita la oficina parroquial con la documentación actualizada y se procederá a realizar la modificación."
+      ]
+    }
+  ]
+}
