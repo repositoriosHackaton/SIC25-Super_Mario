@@ -1,146 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iglesia San Martín De Porres</title>
-  <!-- Se carga el CSS desde la carpeta static -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <!-- Se carga Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-  <!-- Barra de navegación -->
-  <nav class="navbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iglesia San Martín De Porres</title>
+    <!-- Se carga el CSS desde la carpeta static -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- Se carga Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
       <div class="nav-container">
-          <div class="logo-container">
-              <img src="/img/logo.png" alt="Logo">
-              <span class="logo-text">Iglesia San Martín De Porres</span>
-          </div>
-          <ul class="nav-menu">
-              <li><a href="#noticias">Noticias</a></li>
-              <li><a href="#quienes-somos">Quiénes Somos</a></li>
-              <li><a href="#direcciones">Direcciones</a></li>
-              <li><a href="#contacto">Contáctanos</a></li>
-              <!-- El enlace de Login se genera dinámicamente -->
-              <li><a href="{{ url_for('login') }}" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-          </ul>
+        <div class="logo-container">
+          <img src="/img/logo.png" alt="Logo" />
+          <span class="logo-text">Iglesia San Martín De Porres</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#quienes-somos">Quiénes Somos</a></li>
+          <li><a href="{{ url_for('direcciones') }}">Direcciones</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
+          <!-- El enlace de Login se genera dinámicamente -->
+          <li>
+            <a href="{{ url_for('login') }}" class="login-btn"
+              ><i class="fas fa-sign-in-alt"></i> Login</a
+            >
+          </li>
+        </ul>
       </div>
-  </nav>
+    </nav>
 
-  <!-- Contenido principal -->
-  <main class="main-content">
+    <!-- Contenido principal -->
+    <main class="main-content">
       <div class="content-wrapper">
-          <!-- Sección Noticias -->
-          <section id="noticias" class="content-section news-section">
-              <h2>Últimas Noticias</h2>
-              <div class="news-grid">
-                  <!-- Noticia 1: Real -->
-                  <article class="news-card">
-                      <img src="/img/1.webp" alt="Noticia 1">
-                      <h3>Iglesia inaugura nueva sede en el centro</h3>
-                      <p>Con la presencia de autoridades y feligreses, la Iglesia San Martín De Porres inaugura su nueva sede en el centro histórico de la ciudad.</p>
-                  </article>
-                  <!-- Noticia 2: Inventada -->
-                  <article class="news-card">
-                      <img src="/img/2.webp" alt="Noticia 2">
-                      <h3>Conferencia sobre fe y esperanza</h3>
-                      <p>Líderes religiosos se reúnen para debatir los desafíos y oportunidades en la fe contemporánea.</p>
-                  </article>
-                  <!-- Noticia 3: Inventada -->
-                  <article class="news-card">
-                      <img src="/img/3.webp" alt="Noticia 3">
-                      <h3>Programa social impulsa ayuda comunitaria</h3>
-                      <p>La iglesia lanza un nuevo programa para apoyar a familias en situación de vulnerabilidad en la comunidad.</p>
-                  </article>
-              </div>
-          </section>
+        <!-- Sección Noticias -->
+        <section id="noticias" class="content-section news-section">
+          <h2>Últimas Noticias</h2>
+          <div class="news-grid">
+            <!-- Noticia 1: Real -->
+            <article class="news-card">
+              <img src="/img/1.webp" alt="Noticia 1" />
+              <h3>Iglesia inaugura nueva sede en el centro</h3>
+              <p>
+                Con la presencia de autoridades y feligreses, la Iglesia San
+                Martín De Porres inaugura su nueva sede en el centro histórico
+                de la ciudad.
+              </p>
+            </article>
+            <!-- Noticia 2: Inventada -->
+            <article class="news-card">
+              <img src="/img/2.webp" alt="Noticia 2" />
+              <h3>Conferencia sobre fe y esperanza</h3>
+              <p>
+                Líderes religiosos se reúnen para debatir los desafíos y
+                oportunidades en la fe contemporánea.
+              </p>
+            </article>
+            <!-- Noticia 3: Inventada -->
+            <article class="news-card">
+              <img src="/img/3.webp" alt="Noticia 3" />
+              <h3>Programa social impulsa ayuda comunitaria</h3>
+              <p>
+                La iglesia lanza un nuevo programa para apoyar a familias en
+                situación de vulnerabilidad en la comunidad.
+              </p>
+            </article>
+          </div>
+        </section>
 
-          <!-- Sección Eventos -->
-          <aside class="events-section">
-              <h2>Próximos Eventos</h2>
-              <div class="events-grid">
-                  <!-- Evento 1 -->
-                  <article class="event-card">
-                      <div class="event-date">
-                          <span class="day">15</span>
-                          <span class="month">Jul</span>
-                      </div>
-                      <div class="event-info">
-                          <h3>Boda de Kristin</h3>
-                          <p>10:00 AM - Salón principal</p>
-                      </div>
-                  </article>
-                  <!-- Evento 2 inventado -->
-                  <article class="event-card">
-                      <div class="event-date">
-                          <span class="day">22</span>
-                          <span class="month">Ago</span>
-                      </div>
-                      <div class="event-info">
-                          <h3>Concierto de Música Sacra</h3>
-                          <p>6:00 PM - Auditorio Parroquial</p>
-                      </div>
-                  </article>
-                  <!-- Evento 3 inventado -->
-                  <article class="event-card">
-                      <div class="event-date">
-                          <span class="day">05</span>
-                          <span class="month">Sep</span>
-                      </div>
-                      <div class="event-info">
-                          <h3>Caminata de Oración</h3>
-                          <p>7:00 AM - Recorrido por el barrio</p>
-                      </div>
-                  </article>
+        <!-- Sección Eventos -->
+        <aside class="events-section">
+          <h2>Próximos Eventos</h2>
+          <div class="events-grid">
+            <!-- Evento 1 -->
+            <article class="event-card">
+              <div class="event-date">
+                <span class="day">15</span>
+                <span class="month">Jul</span>
               </div>
-          </aside>
+              <div class="event-info">
+                <h3>Boda de Kristin</h3>
+                <p>10:00 AM - Salón principal</p>
+              </div>
+            </article>
+            <!-- Evento 2 inventado -->
+            <article class="event-card">
+              <div class="event-date">
+                <span class="day">22</span>
+                <span class="month">Ago</span>
+              </div>
+              <div class="event-info">
+                <h3>Concierto de Música Sacra</h3>
+                <p>6:00 PM - Auditorio Parroquial</p>
+              </div>
+            </article>
+            <!-- Evento 3 inventado -->
+            <article class="event-card">
+              <div class="event-date">
+                <span class="day">05</span>
+                <span class="month">Sep</span>
+              </div>
+              <div class="event-info">
+                <h3>Caminata de Oración</h3>
+                <p>7:00 AM - Recorrido por el barrio</p>
+              </div>
+            </article>
+          </div>
+        </aside>
       </div>
-  </main>
+    </main>
 
-  <!-- Chat -->
-  <div class="chat-container right">
+    <!-- Chat -->
+    <div class="chat-container right">
       <div class="chat-header" id="chatToggle">
-          <i class="fas fa-comment-dots"></i>
-          <span>Chat de Ayuda</span>
-          <i class="fas fa-chevron-up toggle-icon"></i>
+        <i class="fas fa-comment-dots"></i>
+        <span>Chat de Ayuda</span>
+        <i class="fas fa-chevron-up toggle-icon"></i>
       </div>
-      
-      <div class="chat-body">
-          <ul id="messages"></ul>
-          
-          <form id="chatForm">
-              <input type="text" placeholder="Escribe tu mensaje...">
-              <button type="submit"><i class="fas fa-paper-plane"></i></button>
-          </form>
-      </div>
-  </div>
 
-  <!-- Footer -->
-  <footer class="main-footer">
+      <div class="chat-body">
+        <ul id="messages"></ul>
+
+        <form id="chatForm">
+          <input type="text" placeholder="Escribe tu mensaje..." />
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
       <p>&copy; 2025 Todos los derechos reservados</p>
       <div class="footer-info">
-          <p>Iglesia Parroquial San Martín De Porres</p>
-          <p>Calle Real de Montesano, Callejon Victoria, Carlos Soublette 1162</p>
-          <p>Edo. La Guaira - Venezuela</p>
-          <p>parroquiademontesano@gmail.com | 0212 355-47-46</p>
+        <p>Iglesia Parroquial San Martín De Porres</p>
+        <p>Calle Real de Montesano, Callejon Victoria, Carlos Soublette 1162</p>
+        <p>Edo. La Guaira - Venezuela</p>
+        <p>parroquiademontesano@gmail.com | 0212 355-47-46</p>
       </div>
       <nav>
-          <a href="#">Políticas</a> | 
-          <a href="#">Términos</a> | 
-          <a href="#">Contacto</a>
+        <a href="#">Políticas</a> | <a href="#">Términos</a> |
+        <a href="#">Contacto</a>
       </nav>
-  </footer>
+    </footer>
 
-  <!-- Template para mensajes del chat -->
-  <template id="message-template">
+    <!-- Template para mensajes del chat -->
+    <template id="message-template">
       <li class="message">
-          <p class="text"></p>
-          <small class="timestamp"></small>
+        <p class="text"></p>
+        <small class="timestamp"></small>
       </li>
-  </template>
+    </template>
 
-  <!-- Se carga el JavaScript desde la carpeta static -->
-  <script src="{{ url_for('static', filename='app.js') }}"></script>
-</body>
+    <!-- Se carga el JavaScript desde la carpeta static -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
 </html>

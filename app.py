@@ -2,9 +2,13 @@ import os
 import sqlite3
 import hashlib
 import json
+import smtplib
+import random, string
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
 from flask import Flask, request, render_template, redirect, url_for, session, flash, jsonify, send_from_directory
-from pdf_generator import generate_pdf 
+from pdf_generator import generate_pdf
 
 app = Flask(__name__)
 app.secret_key = "Contraseña123$"
@@ -44,7 +48,7 @@ def format_date_divider(date_str):
 app.jinja_env.filters["format_time"] = format_time
 app.jinja_env.filters["format_date_divider"] = format_date_divider
 
-# Base de datos de los usarios
+# base de datos de usuarios
 def get_db_connection():
     conn = sqlite3.connect("users.db")
     conn.row_factory = sqlite3.Row
@@ -79,13 +83,58 @@ def get_conversation_history(user_id):
     conn.close()
     return messages
 
-#base de datos de los documentos
+# conexion a  la base de datos de los documentos
 def get_db_documents_connection():
     conn = sqlite3.connect(os.path.join(app.root_path, "documents.db"))
     conn.row_factory = sqlite3.Row
     return conn
 
-#rutas del programa
+# verificador de correos para el registro de usuarios
+def generacion_de_codigo(longitud=8):
+    caracteres = string.ascii_letters + string.digits
+    codigo = ''.join(random.choice(caracteres) for _ in range(longitud))
+    return codigo
+
+html_body = """
+<html>
+    <body>
+      <p>Estimado/a {nombre_usuario},</p>
+      <p>Su código de verificación es: <strong>{codigo_usuario}</strong></p>
+      <p>Gracias por su registro.</p>
+    </body>
+</html>
+"""
+
+def conexion_smtp():
+    smtp_direccion = "smtp.gmail.com"
+    smtp_puerto = 587
+    smtp_obj = smtplib.SMTP(smtp_direccion, smtp_puerto)
+    smtp_obj.starttls()
+    return smtp_obj
+
+def autenticacion_smtp(smtp_obj):
+    main_usuario = "sanmartindeporres985@gmail.com"
+    main_contraseña = "xxxb pvft zqad gqea"
+    smtp_obj.login(main_usuario, main_contraseña)
+    return main_usuario
+
+def enviar_correo_verificacion(correo_destino, nombre_usuario):
+    codigo = generacion_de_codigo()
+    smtp_obj = conexion_smtp()
+    main_usuario = autenticacion_smtp(smtp_obj)
+    
+    msg = MIMEMultipart()
+    msg["From"] = main_usuario
+    msg["To"] = correo_destino
+    msg["Subject"] = "Código de verificación"
+    body = html_body.format(nombre_usuario=nombre_usuario, codigo_usuario=codigo)
+    msg.attach(MIMEText(body, "html"))
+    
+    smtp_obj.sendmail(main_usuario, correo_destino, msg.as_string())
+    smtp_obj.quit()
+    return codigo
+
+# rutas del programa
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -109,38 +158,64 @@ def login():
             flash("Credenciales incorrectas. Inténtalo de nuevo.")
     return render_template("login.html")
 
-@app.route("/admin")
-def admin_dashboard():
-    if not session.get("is_admin"):
-        flash("Acceso no autorizado.")
-        return redirect(url_for("login"))
-    return render_template("admin.html")
-
+# registro y verificacion del correo electronico
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        username = request.form.get("username")
-        email = request.form.get("email")
-        password = request.form.get("password")
-        confirm_password = request.form.get("confirmPassword")
-        if password != confirm_password:
-            flash("Las contraseñas no coinciden.")
+        step = request.form.get("step")
+        # con esto pedimos unicamente el correo y se envia el correo de verificacion
+        if step == "send":
+            email = request.form.get("email")
+            verification_code = enviar_correo_verificacion(email, email)
+            session["verification_code"] = verification_code
+            session["pending_email"] = email
+            flash("Código de verificación enviado a " + email)
+            return render_template("register.html", step="verify", email=email)
+        # verificamos que el codigo sea correcto
+        elif step == "verify":
+            input_code = request.form.get("verification_code")
+            if input_code == session.get("verification_code"):
+                session["email_verified"] = True
+                flash("Correo verificado correctamente. Complete el resto de sus datos para registrarse.")
+                return render_template("register.html", step="register", email=session.get("pending_email"))
+            else:
+                flash("Código incorrecto. Inténtalo de nuevo.")
+                return render_template("register.html", step="verify", email=session.get("pending_email"))
+        # lo demas del registro
+        elif step == "register":
+            if not session.get("email_verified"):
+                flash("Debe verificar su correo antes de registrarse.")
+                return render_template("register.html", step="verify", email=session.get("pending_email"))
+            username = request.form.get("username")
+            password = request.form.get("password")
+            confirm_password = request.form.get("confirmPassword")
+            if password != confirm_password:
+                flash("Las contraseñas no coinciden.")
+                return render_template("register.html", step="register", email=session.get("pending_email"))
+            hashed_password = hash_password(password)
+            email = session.get("pending_email")
+            conn = get_db_connection()
+            try:
+                conn.execute("""
+                    INSERT INTO users (username, email, password)
+                    VALUES (?, ?, ?)
+                """, (username, email, hashed_password))
+                conn.commit()
+                flash("Usuario registrado exitosamente. Ahora inicia sesión.")
+                session.pop("verification_code", None)
+                session.pop("pending_email", None)
+                session.pop("email_verified", None)
+                return redirect(url_for("login"))
+            except sqlite3.IntegrityError:
+                flash("Error: El correo ya se encuentra registrado.")
+                return render_template("register.html", step="register", email=email)
+            finally:
+                conn.close()
+        else:
+            flash("Acción no reconocida.")
             return render_template("register.html")
-        hashed_password = hash_password(password)
-        conn = get_db_connection()
-        try:
-            conn.execute("""
-                INSERT INTO users (username, email, password)
-                VALUES (?, ?, ?)
-            """, (username, email, hashed_password))
-            conn.commit()
-            flash("Usuario registrado exitosamente. Ahora inicia sesión.")
-            return redirect(url_for("login"))
-        except sqlite3.IntegrityError:
-            flash("Error: El correo ya se encuentra registrado.")
-        finally:
-            conn.close()
-    return render_template("register.html")
+    else:
+        return render_template("register.html", step="send")
 
 @app.route("/dashboard")
 def dashboard():
@@ -149,6 +224,13 @@ def dashboard():
         return render_template("dashboard.html", history=history)
     else:
         return redirect(url_for("login"))
+
+@app.route("/admin")
+def admin_dashboard():
+    if not session.get("is_admin"):
+        flash("Acceso no autorizado.")
+        return redirect(url_for("login"))
+    return render_template("admin.html")
 
 @app.route("/logout")
 def logout():
@@ -181,21 +263,17 @@ def delete_message():
         return jsonify({"success": True})
     return jsonify({"error": "Mensaje no especificado"}), 400
 
-# generador de pdfs
+# generador de pdf
 @app.route("/generate_pdf", methods=["POST"])
 def generate_pdf_endpoint():
     if "user_id" not in session:
         return jsonify({"error": "Usuario no autenticado"}), 401
-
     data_req = request.get_json()
     document_type = data_req.get("document_type")
     cedula = data_req.get("cedula")
-    
     if not all([document_type, cedula]):
         return jsonify({"error": "Faltan datos requeridos"}), 400
-
     doc_type_query = document_type.capitalize()
-
     db_path = os.path.join(app.root_path, "documents.db")
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
@@ -204,20 +282,15 @@ def generate_pdf_endpoint():
         (doc_type_query, cedula)
     ).fetchone()
     conn.close()
-    
     if row is None:
         return jsonify({"error": "Documento no encontrado"}), 404
-
     details = json.loads(row["details"])
-
     output_dir = os.path.join(app.root_path, "actas")
     os.makedirs(output_dir, exist_ok=True)
     doc_id = str(int(datetime.now().timestamp()))
     filename = f"{document_type}_{doc_id}.pdf"
     file_path = os.path.join(output_dir, filename)
-
     generate_pdf(document_type, details, file_path)
-
     pdf_url = url_for("download_pdf", filename=filename, _external=True)
     return jsonify({"success": True, "url": pdf_url})
 
@@ -251,29 +324,33 @@ def submit_bautizo():
             "folio": request.form.get("folio_n°"),
             "tomo": request.form.get("tomo_n°"),
             "fecha": request.form.get("fecha"),
-            "lugar": ""  # No se solicita en el formulario; se deja vacío
+            "lugar": ""
         }
     }
     document_type = "Bautismo"
     cedula = request.form.get("cédula_de_identidad")
     json_details = json.dumps(details)
     created_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
     conn = get_db_documents_connection()
     conn.execute("INSERT INTO documents (document_type, cedula, details, created_at) VALUES (?, ?, ?, ?)",
                  (document_type, cedula, json_details, created_at))
     conn.commit()
     conn.close()
-    
     flash("Documento de Bautismo registrado exitosamente.")
-    return redirect(url_for("index"))
+    if session.get("is_admin"):
+        return redirect(url_for("admin_dashboard"))
+    else:
+        return redirect(url_for("index"))
 
 @app.route("/submit_matrimonio", methods=["POST"])
 def submit_matrimonio():
+    # Se extrae la cédula del novio para usarla a nivel superior
+    cedula = request.form.get("cedula_novio")
     data = {
+        "cedula": cedula,
         "novio": {
             "nombre": request.form.get("nombre_novio"),
-            "cedula": request.form.get("cedula_novio"),
+            "cedula": cedula,
             "fecha_nacimiento": request.form.get("Fecha_de_nacimiento_novio"),
             "lugar_nacimiento": request.form.get("Lugar_de_nacimiento_novio"),
             "padre": request.form.get("padre_novio"),
@@ -300,18 +377,18 @@ def submit_matrimonio():
         }
     }
     document_type = "Matrimonio"
-    cedula = request.form.get("cedula_novio")
     details = json.dumps(data)
     created_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
     conn = get_db_documents_connection()
     conn.execute("INSERT INTO documents (document_type, cedula, details, created_at) VALUES (?, ?, ?, ?)",
                  (document_type, cedula, details, created_at))
     conn.commit()
     conn.close()
-    
     flash("Documento de Matrimonio registrado exitosamente.")
-    return redirect(url_for("index"))
+    if session.get("is_admin"):
+        return redirect(url_for("admin_dashboard"))
+    else:
+        return redirect(url_for("index"))
 
 @app.route("/submit_confirmacion", methods=["POST"])
 def submit_confirmacion():
@@ -343,17 +420,18 @@ def submit_confirmacion():
     cedula = request.form.get("cédula_de_identidad")
     details = json.dumps(data)
     created_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
     conn = get_db_documents_connection()
     conn.execute("INSERT INTO documents (document_type, cedula, details, created_at) VALUES (?, ?, ?, ?)",
                  (document_type, cedula, details, created_at))
     conn.commit()
     conn.close()
-    
     flash("Documento de Confirmación registrado exitosamente.")
-    return redirect(url_for("index"))
+    if session.get("is_admin"):
+        return redirect(url_for("admin_dashboard"))
+    else:
+        return redirect(url_for("index"))
 
-# rutas de los formulario
+# rutas de los formularios
 @app.route("/bautizo")
 def bautizo():
     return render_template("bautizo.html")
@@ -374,6 +452,11 @@ def download_pdf(filename):
 @app.route("/img/<path:filename>")
 def serve_img(filename):
     return send_from_directory(os.path.join(app.root_path, "img"), filename)
+
+# Ruta para la nueva página "direcciones.html"
+@app.route("/direcciones")
+def direcciones():
+    return render_template("direcciones.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
